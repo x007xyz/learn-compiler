@@ -17,7 +17,7 @@ export interface NumberLiteralNode {
   value: string;
 }
 
-type ChildNode = CallExpressionNode | NumberLiteralNode
+export type ChildNode = CallExpressionNode | NumberLiteralNode
 export interface RootNode {
   type: NodeTypes.Program;
   body: ChildNode[]

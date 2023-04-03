@@ -35,7 +35,7 @@ test("traverser", () => {
 
   const callCounts: Array<string | NodeTypes>[] = [];
   const visitor: Visitor = {
-    Program: {
+    [NodeTypes.Program]: {
       enter(node, parent) {
         callCounts.push(["program-enter", node.type, ""]);
       },
@@ -44,7 +44,7 @@ test("traverser", () => {
       },
     },
 
-    CallExpression: {
+    [NodeTypes.CallExpression]: {
       enter(node, parent) {
         callCounts.push(["callExpression-enter", node.type, parent!.type]);
       },
@@ -53,7 +53,7 @@ test("traverser", () => {
       },
     },
 
-    NumberLiteral: {
+    [NodeTypes.NumberLiteral]: {
       enter(node, parent) {
         callCounts.push(["numberLiteral-enter", node.type, parent!.type]);
       },
